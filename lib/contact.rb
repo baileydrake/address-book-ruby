@@ -19,10 +19,14 @@ class Contact
   end
 
   def add_info(number, email, address)
-     @info_list << Info.new(number, email, address)
+    phone = Phone.new(number)
+    email = Email.new(email)
+    address = Address.new(address)
+
+    @info_list << phone.number + "\n" + email.email + "\n" + address.address
   end
 
-  def contacts
+  def Contact.contacts
     @@all_contacts
   end
 end

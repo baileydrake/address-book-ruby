@@ -1,5 +1,7 @@
-require './lib/address_book'
-require './lib/info'
+require './lib/contact'
+require './lib/phone'
+require './lib/email'
+require './lib/address'
 
 # @contact = []
 
@@ -33,7 +35,6 @@ def list_contact
 end
 
 def view_contacts
-  list_contact
   select_contact
 end
 
@@ -76,7 +77,7 @@ end
 
 def info_list(contact)
   contact.info_list.each_with_index do |info, index|
-    puts (index+1).to_s + ": " + info.number + " " + info.email + " " + info.address
+    puts (index+1).to_s + ": " + info +  "\n"
   end
 end
 main
